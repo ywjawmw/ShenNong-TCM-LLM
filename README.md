@@ -21,8 +21,8 @@ Repo for ShenNong-TCM-LLM (“神农”大模型，首个中医药大模型)
 
 为推动LLM在中医药领域的发展和落地，提升LLM的在中医药方面的知识与回答医学咨询的能力，同时推动大模型赋能中医药传承，我们现推出**ShenNong**中医药大规模语言模型:
 
-- 🚀 [ShenNong-TCM](https://github.com/michael-wzhu/ShenNong-TCM-LLM) :
-    - 这一模型的训练数据为[中医药指令数据集ShenNong_TCM_Dataset](https://huggingface.co/datasets/michaelwzhu/ShenNong_TCM_Dataset)。
+- 🚀 [ShenNong-TCM] :
+    - 这一模型的训练数据为[中医药指令数据集ShenNong_TCM_Dataset]。
     - ChatMed_TCM_Dataset以我们开源的[中医药知识图谱](https://github.com/ywjawmw/TCM_KG)为基础；
     - 采用以实体为中心的自指令方法[entity-centric self-instruct](./src/entity_centric_self_instruct.py)，调用ChatGPT得到11w+的围绕中医药的指令数据；
     - ShenNong-TCM模型也是以LlaMA为底座，采用LoRA (rank=16)微调得到。微调代码与[ChatMed代码库](https://github.com/michael-wzhu/ChatMed)相同
@@ -82,14 +82,6 @@ python src/entity_centric_self_instruct.py your_KG_triples.txt your_output_file.
 - ShenNong-TCM相较于中文LlaMA-7b模型的回答会更加丰富，具有更多可行的建议，特别是可以有效根据症状推荐方剂/中草药。
 
 
-## 技术交流
-
-PromptCBLUE与大模型技术交流微信交流群二维码（截止至6月23日有效）：
-<p align="left">
-    <br>
-    <img src="./pics/wechat_qrcode.jpg" width="300"/>
-    <br>
-</p>
 
 ## 免责声明
 
@@ -110,20 +102,5 @@ PromptCBLUE与大模型技术交流微信交流群二维码（截止至6月23日
 
 Logo中的"神农"形象是由[midjourney](http://midjourney.com)自动生成。
 
-
-## Citation
-
-如果你使用了本项目的模型，数据或者代码，请声明引用：
-
-```bash
-@misc{zhu2023ChatMed,
-      title={ChatMed: A Chinese Medical Large Language Model}, 
-      author={Wei Zhu and Xiaoling Wang},
-      year={2023},
-      publisher = {GitHub},
-      
-      journal = {GitHub repository},
-      howpublished = {\url{https://github.com/michael-wzhu/ChatMed}},
-}
 
 ```
