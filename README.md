@@ -22,7 +22,7 @@ ShenNong-TCM-LLM (“神农”大模型，首个中医药大模型) 更新版 V2
 为推动LLM在中医药领域的发展和落地，提升LLM的在中医药方面的知识与回答医学咨询的能力，同时推动大模型赋能中医药传承，我们现推出**ShenNong**中医药大规模语言模型:
 
 - 🚀 [ShenNong-TCM] :
-    - 这一模型的训练数据为[中医药指令数据集ShenNong_TCM_Dataset]。
+    - 这一模型的训练数据为[中医药指令数据集SN-QA](https://huggingface.co/datasets/michaelwzhu/ShenNong_TCM_Dataset)。
     - ChatMed_TCM_Dataset以我们开源的[中医药知识图谱](https://github.com/ywjawmw/TCM_KG)为基础；
     - 采用以实体为中心的自指令方法[entity-centric self-instruct](https://github.com/ywjawmw/ShenNong-TCM-LLM/crawl_tcm_prompt_symptom_combo.py)，调用ChatGPT得到11w+的围绕中医药的指令数据[SN-QA](https://huggingface.co/datasets/michaelwzhu/ShenNong_TCM_Dataset)；
     - ShenNong-L模型以LlaMA 7B为底座，采用LoRA (rank=16)微调得到。微调代码与[ChatMed代码库](https://github.com/michael-wzhu/ChatMed)相同
