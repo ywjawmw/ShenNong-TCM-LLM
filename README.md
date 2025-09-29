@@ -40,7 +40,7 @@ ShenNong-TCM-LLM (“神农”大模型，首个中医药大模型) 更新版 V2
 
 2025/09/29 🚀 开源[ShenNong-Q模型checkpoint](https://huggingface.co/WJing123/ShenNong-Q), 并更新SN-QA v0.2自指令生成代码，与推理pipeline(./reasoning_pipeline)。
 
-2023/6/25 🚀 开源[中医药指令数据集ShenNong_TCM_Dataset(SN-QA)](https://huggingface.co/datasets/michaelwzhu/ShenNong_TCM_Dataset)的v0.2版本，数据量达到11w+; 同时上传ShenNong-L模型checkpoint至[model](https://huggingface.co/michaelwzhu/ShenNong-TCM-LLM). 
+2023/6/25 🚀 开源[中医药指令数据集ShenNong_TCM_Dataset(SN-QA)](https://huggingface.co/datasets/michaelwzhu/ShenNong_TCM_Dataset)的v0.2版本，数据量达到11w+; 同时上传[ShenNong-L模型checkpoint](https://huggingface.co/michaelwzhu/ShenNong-TCM-LLM). 
 
 2023/6/21 🚀 开源[中医药指令数据集ShenNong_TCM_Dataset](https://huggingface.co/datasets/michaelwzhu/ShenNong_TCM_Dataset)的v0.1版本，v0.2版本即将更新;
 
