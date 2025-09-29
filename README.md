@@ -1,5 +1,5 @@
-# ShenNong-TCM-LLM
-Repo for ShenNong-TCM-LLM (“神农”大模型，首个中医药大模型)
+# ShenNong系列模型
+ShenNong-TCM-LLM (“神农”大模型，首个中医药大模型) 更新版
 
 
 [**中文**](./README.md) | [**English**](./README_EN.md)
@@ -24,10 +24,12 @@ Repo for ShenNong-TCM-LLM (“神农”大模型，首个中医药大模型)
 - 🚀 [ShenNong-TCM] :
     - 这一模型的训练数据为[中医药指令数据集ShenNong_TCM_Dataset]。
     - ChatMed_TCM_Dataset以我们开源的[中医药知识图谱](https://github.com/ywjawmw/TCM_KG)为基础；
-    - 采用以实体为中心的自指令方法[entity-centric self-instruct](./src/entity_centric_self_instruct.py)，调用ChatGPT得到11w+的围绕中医药的指令数据；
-    - ShenNong-TCM模型也是以LlaMA为底座，采用LoRA (rank=16)微调得到。微调代码与[ChatMed代码库](https://github.com/michael-wzhu/ChatMed)相同
+    - 采用以实体为中心的自指令方法[entity-centric self-instruct](https://github.com/ywjawmw/ShenNong-TCM-LLM/blob/main/crawl_tcm_prompt_symptom_combo.py)，调用ChatGPT得到11w+的围绕中医药的指令数据；
+    - ShenNong-L模型以LlaMA 7B为底座，采用LoRA (rank=16)微调得到。微调代码与[ChatMed代码库](https://github.com/michael-wzhu/ChatMed)相同
+    - 我们补充了ShenNong-Q模型，以Qwen 1.8B为底座，采用LoRA (rank=16)微调得到。
 
 同时，欢迎大家关注我们的其他医疗大模型开源项目
+- 🚀 [Intelligent TCM Inheritance and Innovation Assistance Platform](https://github.com/ywjawmw/AI4TCM-Platform) 数智岐黄系列平台——中医只能传承与创新平台 ;
 - 🚀 [ChatMed-Consult](https://huggingface.co/michaelwzhu/ChatMed-Consult) : 基于[中文医疗在线问诊数据集ChatMed_Consult_Dataset](https://huggingface.co/datasets/michaelwzhu/ChatMed_Consult_Dataset)的50w+在线问诊+ChatGPT回复作为训练集。模型主干为[LlaMA-7b](https://github.com/facebookresearch/llama),融合了[Chinese-LlaMA-Alpaca](https://github.com/ymcui/Chinese-LLaMA-Alpaca)的LoRA权重与中文扩展词表，然后再进行基于LoRA的参数高效微调。我们将全部代码都进行了公开；
 - 🚀 [ChatMed-MT](https://huggingface.co/michaelwzhu/ChatMed-MT) : ChatMed-Consult的多轮对话版本，对已有的开源中文问诊数据集进行LLM自动改造，使得医生回复文本更加具有共情性，也更贴心与详细，由此训练的LLM在患者/用户体验上会更好。
 - 🚀 [PromptCBLUE中文医疗大模型评测基准](https://github.com/michael-wzhu/PromptCBLUE): 将[CBLUE](https://tianchi.aliyun.com/dataset/95414)基准进行改造为提示学习模式，形成对大模型的中文医疗知识与医疗文本处理能力的评测基准。PromptCBLUE旨在采用一个生成式大模型即可完成医疗NLP相关的各种不同任务，如病历结构化，问诊，病例文书撰写等。
@@ -36,7 +38,9 @@ Repo for ShenNong-TCM-LLM (“神农”大模型，首个中医药大模型)
 
 ## 更新
 
-2023/6/25 🚀 开源[中医药指令数据集ShenNong_TCM_Dataset](https://huggingface.co/datasets/michaelwzhu/ShenNong_TCM_Dataset)的v0.2版本，数据量达到11w+; 同时上传ShenNong-TCM模型checkpoint至[model](https://huggingface.co/michaelwzhu/ShenNong-TCM-LLM). 
+2025/09/29 🚀 开源[ShenNong-Q模型checkpoint]([https://huggingface.co/datasets/michaelwzhu/ShenNong_TCM_Dataset](https://huggingface.co/WJing123/ShenNong-Q), 并更新SN-QA v0.2自指令生成代码，与推理pipeline。
+
+2023/6/25 🚀 开源[中医药指令数据集ShenNong_TCM_Dataset(SN-QA)](https://huggingface.co/datasets/michaelwzhu/ShenNong_TCM_Dataset)的v0.2版本，数据量达到11w+; 同时上传ShenNong-TCM模型checkpoint至[model](https://huggingface.co/michaelwzhu/ShenNong-TCM-LLM). 
 
 2023/6/21 🚀 开源[中医药指令数据集ShenNong_TCM_Dataset](https://huggingface.co/datasets/michaelwzhu/ShenNong_TCM_Dataset)的v0.1版本，v0.2版本即将更新;
 
@@ -45,26 +49,34 @@ Repo for ShenNong-TCM-LLM (“神农”大模型，首个中医药大模型)
 
 ## 快速上手
 
-如果同学们想要采用[中医药指令数据集ShenNong_TCM_Dataset](https://huggingface.co/datasets/michaelwzhu/ShenNong_TCM_Dataset)进行大模型微调，可以参考[ChatMed代码库](https://github.com/michael-wzhu/ChatMed)的代码和训练脚本；
+如果同学们想要采用[中医药指令数据集SN-QA](https://huggingface.co/datasets/michaelwzhu/ShenNong_TCM_Dataset)进行大模型微调，可以参考[ChatMed代码库](https://github.com/michael-wzhu/ChatMed)的代码和训练脚本；
 
 
 ## 以实体为中心的自指令方法
 
-[中医药指令数据集ShenNong_TCM_Dataset](https://huggingface.co/datasets/michaelwzhu/ShenNong_TCM_Dataset)是完全开源的，可供社区成员们使用。
+[中医药指令数据集SN-QA](https://huggingface.co/datasets/michaelwzhu/ShenNong_TCM_Dataset)是完全开源的，可供社区成员们使用。
 
-我们知道，垂直领域相较于通用领域的不同之处在于其一般是知识密集性的，而这些知识一般是围绕一些实体的。所以，我们提出实体为中心的自指令方法[entity-centric self-instruct](./src/entity_centric_self_instruct.py)，即围绕垂直领域中的核心实体，以及各种不同的意图场景，进行指令的生成。
-如果小伙伴们想要基于自己本地的知识库/知识图谱，进行entity-centric self-instruct，则可以运行下面的命令（注意需要在代码文件中配置自己的api key）：
+我们知道，垂直领域相较于通用领域的不同之处在于其一般是知识密集性的，而这些知识一般是围绕一些实体的。所以，我们提出实体为中心的自指令方法[entity-centric self-instruct](https://github.com/ywjawmw/ShenNong-LLM/blob/main/query_crawl_tcm_prompt_symptom_combo.py)，即围绕垂直领域中的核心实体，以及各种不同的意图场景，进行指令的生成。
+如果想要基于《中医方剂大辞典》的症状集合进行生成，[data](https://github.com/ywjawmw/ShenNong-LLM/blob/main/all_TCM_name.txt)
 ```bash
-python src/entity_centric_self_instruct.py your_KG_triples.txt your_output_file.jsonl
+python crawl_tcm_prompt_symptom_combo.py   # 高级进阶版，加入了更多的command
+python query_crawl_tcm_prompt_symptom_combo.py  # paper version
+
+```
+小伙伴们可以自行选择，在此基础上还可以自行优化和构建~~~
+
+如果想要基于自己本地的知识库/知识图谱，进行entity-centric self-instruct，则可以运行下面的命令（注意需要在代码文件中配置自己的api key）：
+```bash
+python query_crawl_tcm_KG_prompts.py
 
 ```
 
-其中"your_KG_triples.txt"文件是知识图谱每个三元组写在txt文件形成的，参考[TCM-KG](https://github.com/ywjawmw/TCM_KG)或者[TCM-KG文件](./src/TCM-KG_triples.txt).
+其中"baseline_all_kg_triples.txt"文件是知识图谱每个三元组写在txt文件形成的，参考[TCM-KG](https://github.com/ywjawmw/TCM_KG).
 
 
 ## 效果对比
-
-通过使用[中医药指令数据集ShenNong_TCM_Dataset](https://huggingface.co/datasets/michaelwzhu/ShenNong_TCM_Dataset)对中文LlaMA-7b模型进行LoRA微调，可使得该模型在回复中医药相关问题方面获得明显的提升。这里我们展示了5个典型中医药问题下不同模型的回复。更多测试样例见[更多测试样例](./src/ShenNong-TCM-LLM - test examples.xls)
+# 我们以ShenNong-L为例：
+通过使用[中医药指令数据集SN-QA](https://huggingface.co/datasets/michaelwzhu/ShenNong_TCM_Dataset)对中文LlaMA-7b模型进行LoRA微调，可使得该模型在回复中医药相关问题方面获得明显的提升。这里我们展示了5个典型中医药问题下不同模型的回复。更多测试样例见[更多测试样例](./src/ShenNong-TCM-LLM - test examples.xls)
 
 
 | 问诊问题 | 中文LlaMA-7b | ShenNong-TCM                                                                                                                                                                                                                                                                                                                               |
@@ -77,9 +89,9 @@ python src/entity_centric_self_instruct.py your_KG_triples.txt your_output_file.
 | 我牙齿疼痛，同时伴有口臭，有什么方法缓解？    |      建议您及时到口腔医院就诊。牙周炎、龋齿等疾病可能导致牙齿痛和口臭等问题出现     | 您可以尝试以下几种方式来减轻牙痛和减少口腔异味：\n\n1.漱口盐水。将一茶匙食醋加入一杯温水中，搅拌均匀后用来漱口即可。这有助于杀死细菌并减轻口气。\n\n2.使用含氟的洗发剂或去屑产品。这些产品的成分含有一定量的氟化物，可帮助清洁牙齿表面，防止龋齿形成。\n\n3.刷牙时用软毛刷轻轻按摩牙齿边缘以去除食物残渣。\n\n4.定期去看牙医进行检查和治疗。如果出现严重的蛀洞或其他问题，及时修复可能会避免更严重后果。\n\n5.注意饮食健康，少吃甜食、碳酸饮料等易导致蛀牙的食物。                                                                                           |
 
 
-我们可以看到：
-- ShenNong-TCM的回答会更加具有人性关怀一些，而中文LlaMA-7b模型的回复可能会比较生硬；
-- ShenNong-TCM相较于中文LlaMA-7b模型的回答会更加丰富，具有更多可行的建议，特别是可以有效根据症状推荐方剂/中草药。
+我们可以看到： 
+- ShenNong-L的回答会更加具有人性关怀一些，而中文LlaMA-7b模型的回复可能会比较生硬；
+- ShenNong-L相较于中文LlaMA-7b模型的回答会更加丰富，具有更多可行的建议，特别是可以有效根据症状推荐方剂/中草药。
 
 
 
@@ -99,6 +111,7 @@ python src/entity_centric_self_instruct.py your_KG_triples.txt your_output_file.
 - [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca)
 - [Chinese-LlaMA-Alpaca](https://github.com/ymcui/Chinese-LLaMA-Alpaca)
 - [ChatMed](https://github.com/michael-wzhu/ChatMed)
+- [Qwen](https://huggingface.co/Qwen)
 
 Logo中的"神农"形象是由[midjourney](http://midjourney.com)自动生成。
 
