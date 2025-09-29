@@ -24,7 +24,7 @@ ShenNong-TCM-LLM (“神农”大模型，首个中医药大模型) 更新版 V2
 - 🚀 [ShenNong-TCM] :
     - 这一模型的训练数据为[中医药指令数据集ShenNong_TCM_Dataset]。
     - ChatMed_TCM_Dataset以我们开源的[中医药知识图谱](https://github.com/ywjawmw/TCM_KG)为基础；
-    - 采用以实体为中心的自指令方法[entity-centric self-instruct](https://github.com/ywjawmw/ShenNong-TCM-LLM/blob/main/crawl_tcm_prompt_symptom_combo.py)，调用ChatGPT得到11w+的围绕中医药的指令数据[SN-QA](https://huggingface.co/datasets/WJing123/SN-QA)；
+    - 采用以实体为中心的自指令方法[entity-centric self-instruct](https://github.com/ywjawmw/ShenNong-TCM-LLM/crawl_tcm_prompt_symptom_combo.py)，调用ChatGPT得到11w+的围绕中医药的指令数据[SN-QA](https://huggingface.co/datasets/michaelwzhu/ShenNong_TCM_Dataset)；
     - ShenNong-L模型以LlaMA 7B为底座，采用LoRA (rank=16)微调得到。微调代码与[ChatMed代码库](https://github.com/michael-wzhu/ChatMed)相同
     - ShenNong-Q模型，以Qwen 1.8B为底座，采用LoRA (rank=16)微调得到。
 
@@ -40,7 +40,7 @@ ShenNong-TCM-LLM (“神农”大模型，首个中医药大模型) 更新版 V2
 
 2025/09/29 🚀 开源[ShenNong-Q模型checkpoint](https://huggingface.co/WJing123/ShenNong-Q), 并更新SN-QA v0.2自指令生成代码，与推理pipeline(./reasoning_pipeline)。
 
-2023/6/25 🚀 开源[中医药指令数据集ShenNong_TCM_Dataset(SN-QA)](https://huggingface.co/datasets/michaelwzhu/ShenNong_TCM_Dataset,https://huggingface.co/datasets/michaelwzhu/ShenNong_TCM_Dataset)的v0.2版本，数据量达到11w+; 同时上传ShenNong-L模型checkpoint至[model](https://huggingface.co/michaelwzhu/ShenNong-TCM-LLM). 
+2023/6/25 🚀 开源[中医药指令数据集ShenNong_TCM_Dataset(SN-QA)](https://huggingface.co/datasets/michaelwzhu/ShenNong_TCM_Dataset)的v0.2版本，数据量达到11w+; 同时上传ShenNong-L模型checkpoint至[model](https://huggingface.co/michaelwzhu/ShenNong-TCM-LLM). 
 
 2023/6/21 🚀 开源[中医药指令数据集ShenNong_TCM_Dataset](https://huggingface.co/datasets/michaelwzhu/ShenNong_TCM_Dataset)的v0.1版本，v0.2版本即将更新;
 
