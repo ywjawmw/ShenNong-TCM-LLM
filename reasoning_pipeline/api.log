@@ -1,0 +1,39 @@
+nohup: ignoring input
+LlamaConfig {
+  "_name_or_path": "/data2/shennong-merge-checkpoint-1w",
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "bos_token_id": 0,
+  "eos_token_id": 1,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.02,
+  "intermediate_size": 11008,
+  "max_position_embeddings": 2048,
+  "max_sequence_length": 2048,
+  "model_type": "llama",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "pad_token_id": -1,
+  "rms_norm_eps": 1e-06,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float16",
+  "transformers_version": "4.28.0",
+  "use_cache": true,
+  "vocab_size": 49954
+}
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:06<00:06,  6.89s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:09<00:00,  4.45s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:09<00:00,  4.81s/it] * Serving Flask app 'web_service'
+ * Debug mode: off
+
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:9005
+ * Running on http://172.20.3.61:9005
+[33mPress CTRL+C to quit[0m
+/home/zhr/anaconda3/envs/retallm/lib/python3.8/site-packages/transformers/generation/utils.py:1219: UserWarning: You have modified the pretrained model configuration to control generation. This is a deprecated strategy to control generation and will be removed soon, in a future version. Please use a generation configuration file (see https://huggingface.co/docs/transformers/main_classes/text_generation)
+  warnings.warn(
+172.20.3.61 - - [10/Aug/2023 16:43:55] "POST /chatmed_generate HTTP/1.1" 200 -
+172.20.3.61 - - [10/Aug/2023 16:44:14] "POST /chatmed_generate HTTP/1.1" 200 -
+172.20.3.61 - - [10/Aug/2023 16:47:24] "POST /chatmed_generate HTTP/1.1" 200 -
