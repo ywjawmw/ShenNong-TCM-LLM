@@ -80,7 +80,7 @@ sh ./reasoning_pipeline/api.sh
 ```
 ## Effect Comparison
 
-# Example: ShenNong-L
+### Example: ShenNong-L
 
 By fine-tuning the Chinese LLaMA-7b model with the SN-QA dataset using LoRA, the model achieves significant improvement in answering TCM-related questions. Below we show 5 typical TCM questions with responses from both models. More test cases are available [here](./ShenNong-TCM-LLM-test examples.xls).
 | 问诊问题 | 中文LlaMA-7b | ShenNong-TCM                                                                                                                                                                                                                                                                                                                               |
