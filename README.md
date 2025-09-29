@@ -56,8 +56,8 @@ ShenNong-TCM-LLM (“神农”大模型，首个中医药大模型) 更新版 V2
 
 [中医药指令数据集SN-QA](https://huggingface.co/datasets/WJing123/SN-QA)是完全开源的，可供社区成员们使用。
 
-我们知道，垂直领域相较于通用领域的不同之处在于其一般是知识密集性的，而这些知识一般是围绕一些实体的。所以，我们提出实体为中心的自指令方法[entity-centric self-instruct](https://github.com/ywjawmw/ShenNong-LLM/blob/main/query_crawl_tcm_prompt_symptom_combo.py)，即围绕垂直领域中的核心实体，以及各种不同的意图场景，进行指令的生成。
-如果想要基于《中医方剂大辞典》的症状集合进行生成，[data](https://github.com/ywjawmw/ShenNong-LLM/blob/main/all_TCM_name.txt)
+我们知道，垂直领域相较于通用领域的不同之处在于其一般是知识密集性的，而这些知识一般是围绕一些实体的。所以，我们提出实体为中心的自指令方法[entity-centric self-instruct](https://github.com/ywjawmw/ShenNong-TCM-LLM/query_crawl_tcm_prompt_symptom_combo.py)，即围绕垂直领域中的核心实体，以及各种不同的意图场景，进行指令的生成。
+如果想要基于《中医方剂大辞典》的[症状集合](https://github.com/ywjawmw/ShenNong-TCM-LLM/all_TCM_name.txt)进行生成
 ```bash
 python crawl_tcm_prompt_symptom_combo.py   # 高级进阶版，加入了更多的command
 python query_crawl_tcm_prompt_symptom_combo.py  # paper version
