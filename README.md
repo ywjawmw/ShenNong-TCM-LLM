@@ -38,7 +38,7 @@ ShenNong-TCM-LLM (“神农”大模型，首个中医药大模型) 更新版
 
 ## 更新
 
-2025/09/29 🚀 开源[ShenNong-Q模型checkpoint]([https://huggingface.co/datasets/michaelwzhu/ShenNong_TCM_Dataset](https://huggingface.co/WJing123/ShenNong-Q), 并更新SN-QA v0.2自指令生成代码，与推理pipeline。
+2025/09/29 🚀 开源[ShenNong-Q模型checkpoint]([https://huggingface.co/datasets/michaelwzhu/ShenNong_TCM_Dataset](https://huggingface.co/WJing123/ShenNong-Q), 并更新SN-QA v0.2自指令生成代码，与推理pipeline(./reasoning_pipeline)。
 
 2023/6/25 🚀 开源[中医药指令数据集ShenNong_TCM_Dataset(SN-QA)](https://huggingface.co/datasets/michaelwzhu/ShenNong_TCM_Dataset)的v0.2版本，数据量达到11w+; 同时上传ShenNong-TCM模型checkpoint至[model](https://huggingface.co/michaelwzhu/ShenNong-TCM-LLM). 
 
@@ -72,6 +72,12 @@ python query_crawl_tcm_KG_prompts.py
 ```
 
 其中"baseline_all_kg_triples.txt"文件是知识图谱每个三元组写在txt文件形成的，参考[TCM-KG](https://github.com/ywjawmw/TCM_KG).
+
+启动ShenNong, 进行推理
+```bash
+sh ./reasoning_pipeline/api.sh
+
+```
 
 
 ## 效果对比
